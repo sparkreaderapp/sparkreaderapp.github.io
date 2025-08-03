@@ -1,1 +1,165 @@
-<!DOCTYPE html><html><head><title>My Site</title></head><body><h1>Hello, world!</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SparkReader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Outfit', sans-serif;
+            background-color: #171217;
+            /* backgroundDark */
+            color: #EADFE6;
+            /* onBackgroundDark */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        img.logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0.2em 0;
+            color: #FFD6FF;
+            /* onPrimaryContainerDark */
+        }
+
+        h2.subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: #D0C3CC;
+            /* onSurfaceVariantDark */
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            width: 260px;
+        }
+
+        .button.google-play {
+            background-color: #524153;
+            /* secondaryContainerDark */
+            color: #F4DBF2;
+            /* onSecondaryContainerDark */
+            border: 1px solid #998D96;
+            /* outlineDark */
+        }
+
+        .button.google-play:hover {
+            background-color: #3B2B3C;
+            /* onSecondaryDark */
+        }
+
+        .button.github {
+            background-color: #613767;
+            /* primaryContainerDark */
+            color: #FFD6FF;
+            /* onPrimaryContainerDark */
+        }
+
+        .button.github:hover {
+            background-color: #48204F;
+            /* onPrimaryDark */
+        }
+
+        .button img {
+            height: 32px;
+            width: 32px;
+        }
+
+        a {
+            /* color: #B2C5FF */
+            /* linkColorDark */
+            color: #e3e313
+                /* sparkStartColor */
+        }
+
+        a:hover {
+            color: #FFDAD5;
+            /* onTertiaryContainerDark */
+        }
+
+        .icon-wrapper {
+            background-color: #EADFE6;
+            /* onBackgroundDark */
+            border-radius: 50%;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-wrapper img {
+            height: 24px;
+            width: 24px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2.subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/logo_dark.png" alt="SparkReader Logo" class="logo" />
+    <h1>SparkReader</h1>
+    <h2 class="subtitle">Offline AI. Limitless Learning. In Your Hand.</h2>
+
+    <div class="buttons">
+        <a href="https://github.com/yourusername/sparkreader/releases/latest" class="button github">
+            <span class="icon-wrapper">
+                <img src="images/github.svg"
+                    alt="GitHub Icon">
+            </span>
+            Download via GitHub
+        </a>
+
+        <a href="#" class="button google-play">
+            <img src="images/playstore.png" alt="Play Store Icon">
+            Coming Soon on Play Store
+        </a>
+    </div>
+
+    <p style="margin-top: 3rem; color: #D0C3CC; font-size: 0.95rem;"> <!-- onSurfaceVariantDark -->
+        A submission to the <strong><a href="https://www.kaggle.com/competitions/google-gemma-3n-hackathon">Google - The
+                Gemma 3n Impact Challenge</a></strong> — building private, powerful AI that runs in the palm of your
+        hand.
+    </p>
+
+</body>
+
+</html>
