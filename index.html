@@ -132,6 +132,30 @@
             }
         }
     </style>
+
+    <script>
+async function getLatestApkUrl() {
+  try {
+    const response = await fetch("https://api.github.com/repos/sparkreaderapp/sparkreader/releases/latest");
+    if (!response.ok) throw new Error("GitHub API error");
+    
+    const release = await response.json();
+    const apk = release.assets.find(asset => asset.name === "app-release.apk");
+    if (apk) {
+      // Dynamically set a download link or trigger download
+      const downloadLink = document.getElementById("github-download-link");
+      downloadLink.href = apk.browser_download_url;
+      //downloadLink.style.display = "inline";
+    } else {
+      console.error("APK not found in assets.");
+    }
+  } catch (error) {
+    console.error("Failed to fetch release info:", error);
+  }
+}
+
+window.onload = getLatestApkUrl;
+</script>
 </head>
 
 <body>
@@ -140,7 +164,7 @@
     <h2 class="subtitle">Offline AI. Limitless Learning. In Your Hand.</h2>
 
     <div class="buttons">
-        <a href="https://media.githubusercontent.com/media/sparkreaderapp/sparkreader-library/refs/heads/main/release/library-1.2.5.zip" class="button github">
+        <a id="github-download-link" href="https://media.githubusercontent.com/media/sparkreaderapp/sparkreader-library/refs/heads/main/release/library-1.2.5.zip" class="button github">
             <span class="icon-wrapper">
                 <img src="images/github.svg"
                     alt="GitHub Icon">
