@@ -186,6 +186,31 @@ body {
   padding-bottom: 0.5rem;
 }
 
+/* Custom scrollbar styling */
+.md-filter-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.md-filter-row::-webkit-scrollbar-track {
+  background: var(--md-sys-color-surface-variant);
+  border-radius: 3px;
+}
+
+.md-filter-row::-webkit-scrollbar-thumb {
+  background: var(--md-sys-color-outline);
+  border-radius: 3px;
+}
+
+.md-filter-row::-webkit-scrollbar-thumb:hover {
+  background: var(--md-sys-color-on-surface-variant);
+}
+
+/* Firefox scrollbar styling */
+.md-filter-row {
+  scrollbar-width: thin;
+  scrollbar-color: var(--md-sys-color-outline) var(--md-sys-color-surface-variant);
+}
+
 .md-filter-label {
   font-weight: 600;
   color: var(--md-sys-color-on-surface);
