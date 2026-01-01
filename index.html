@@ -46,48 +46,43 @@
 
         .buttons {
             display: flex;
+            flex-direction: column;
             gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
+            align-items: center;
         }
 
         .button {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 1.1rem;
+            font-weight: 500;
             text-decoration: none;
-            transition: background-color 0.3s ease;
-            width: 260px;
+            transition: color 0.3s ease;
+            border: 1px solid #998D96;
+            /* outlineDark */
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
         }
 
         .button.google-play {
-            background-color: #524153;
-            /* secondaryContainerDark */
             color: #F4DBF2;
             /* onSecondaryContainerDark */
-            border: 1px solid #998D96;
-            /* outlineDark */
         }
 
         .button.google-play:hover {
-            background-color: #3B2B3C;
-            /* onSecondaryDark */
+            color: #e3e313;
+            /* sparkStartColor */
         }
 
         .button.github {
-            background-color: #613767;
-            /* primaryContainerDark */
             color: #FFD6FF;
             /* onPrimaryContainerDark */
         }
 
         .button.github:hover {
-            background-color: #48204F;
-            /* onPrimaryDark */
+            color: #e3e313;
+            /* sparkStartColor */
         }
 
         .library-link {
