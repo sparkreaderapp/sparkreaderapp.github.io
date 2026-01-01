@@ -54,6 +54,25 @@ class SparkReaderCatalog {
             this.updateFilterChips();
             this.filterAndRenderBooks();
         });
+
+        // Info modal
+        const infoButton = document.getElementById('infoButton');
+        const infoModal = document.getElementById('infoModal');
+        const closeModal = document.getElementById('closeModal');
+
+        infoButton.addEventListener('click', () => {
+            infoModal.classList.remove('hidden');
+        });
+
+        closeModal.addEventListener('click', () => {
+            infoModal.classList.add('hidden');
+        });
+
+        infoModal.addEventListener('click', (e) => {
+            if (e.target === infoModal) {
+                infoModal.classList.add('hidden');
+            }
+        });
     }
 
     async loadCatalog() {

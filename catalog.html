@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SparkReader Library Catalog</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo_library_dark.svg">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,8 +12,13 @@
 <body>
     <div class="md-app-bar">
         <div class="md-container">
-            <h1 class="md-typescale-headline-medium">SparkReader Library</h1>
-            <p class="md-typescale-body-medium">Browse and discover books in the SparkReader collection</p>
+            <div class="md-header-content">
+                <img src="images/logo_library_dark.svg" alt="SparkReader Library" class="md-header-icon">
+                <h1 class="md-typescale-headline-medium">SparkReader Library</h1>
+                <button class="md-icon-button" id="infoButton">
+                    <span class="material-icons">info</span>
+                </button>
+            </div>
         </div>
     </div>
 
@@ -67,6 +73,25 @@
         <!-- Book List -->
         <div class="md-book-list" id="bookList">
             <!-- Books will be populated here -->
+        </div>
+    </div>
+
+    <!-- Info Modal -->
+    <div class="md-modal-overlay hidden" id="infoModal">
+        <div class="md-modal">
+            <div class="md-modal-header">
+                <h2 class="md-typescale-title-large">About SparkReader Library</h2>
+                <button class="md-icon-button" id="closeModal">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            <div class="md-modal-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
         </div>
     </div>
 
