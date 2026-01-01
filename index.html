@@ -64,7 +64,7 @@
             border-radius: 8px;
             padding: 0.75rem 1.5rem;
             width: 280px;
-            justify-content: center;
+            justify-content: flex-start;
         }
 
         .button.google-play {
@@ -98,7 +98,7 @@
             border-radius: 8px;
             padding: 0.75rem 1.5rem;
             width: 280px;
-            justify-content: center;
+            justify-content: flex-start;
         }
 
         .library-link:hover {
@@ -128,15 +128,6 @@
             /* onTertiaryContainerDark */
         }
 
-        .icon-wrapper {
-            background-color: #EADFE6;
-            /* onBackgroundDark */
-            border-radius: 50%;
-            padding: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
         @media (max-width: 600px) {
             h1 {
@@ -179,10 +170,7 @@ window.onload = setLatestApkUrl;
         </a>
         
         <a id="github-download-link" href="#" class="button github">
-            <span class="icon-wrapper">
-            <img src="images/github.svg"
-                alt="GitHub Icon">
-            </span>
+            <img src="images/github.svg" alt="GitHub Icon">
             Download via GitHub
         </a>
 
