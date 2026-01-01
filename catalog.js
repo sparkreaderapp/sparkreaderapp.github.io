@@ -14,6 +14,7 @@ class SparkReaderCatalog {
         this.setupEventListeners();
         await this.loadCatalog();
         await this.loadTags();
+        await this.loadReadme();
         this.renderFilters();
         this.filterAndRenderBooks();
     }
@@ -132,6 +133,52 @@ class SparkReaderCatalog {
         // If all URLs failed, fallback to extracting from books
         console.warn('Failed to load tags from all sources, extracting from books');
         this.extractTagsFromBooks();
+    }
+
+    async loadReadme() {
+        const urls = [
+            'https://raw.githubusercontent.com/sparkreaderapp/sparkreader-library/main/README.md'
+        ];
+
+        for (const url of urls) {
+            try {
+                console.log(`Attempting to load README from: ${url}`);
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                
+                const readmeText = await response.text();
+                this.displayReadmeInModal(readmeText);
+                console.log('Successfully loaded README');
+                return;
+            } catch (error) {
+                console.warn(`Failed to load README from ${url}:`, error);
+                continue;
+            }
+        }
+
+        console.warn('Failed to load README, keeping default content');
+    }
+
+    displayReadmeInModal(markdownText) {
+        // Simple markdown to HTML conversion for basic formatting
+        let html = markdownText
+            .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+            .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+            .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*(.*?)\*/g, '<em>$1</em>')
+            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
+            .replace(/\n\n/g, '</p><p>')
+            .replace(/\n/g, '<br>');
+        
+        // Wrap in paragraphs
+        html = '<p>' + html + '</p>';
+        
+        // Clean up empty paragraphs
+        html = html.replace(/<p><\/p>/g, '').replace(/<p><br>/g, '<p>');
+        
+        const modalContent = document.querySelector('#infoModal .md-modal-content');
+        modalContent.innerHTML = html;
     }
 
     parseTags(tagsText) {
