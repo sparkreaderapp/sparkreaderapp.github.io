@@ -59,7 +59,7 @@ class SparkReaderCatalog {
     async loadCatalog() {
         const urls = [
             // Try CORS proxy first
-            'https://api.allorigins.win/raw?url=https://github.com/sparkreaderapp/sparkreader-library/releases/download/v1.0.0/catalog-v1.0.0.json',
+            //'https://api.allorigins.win/raw?url=https://github.com/sparkreaderapp/sparkreader-library/releases/download/v1.0.0/catalog-v1.0.0.json',
             // Fallback to raw GitHub content
             'https://raw.githubusercontent.com/sparkreaderapp/sparkreader-library/main/catalog/catalog.json'
         ];
@@ -89,7 +89,7 @@ class SparkReaderCatalog {
     async loadTags() {
         const urls = [
             // Try CORS proxy first
-            'https://api.allorigins.win/raw?url=https://raw.githubusercontent.com/sparkreaderapp/sparkreader-library/main/catalog/tags.txt',
+            //'https://api.allorigins.win/raw?url=https://raw.githubusercontent.com/sparkreaderapp/sparkreader-library/main/catalog/tags.txt',
             // Direct GitHub raw content (may work in some cases)
             'https://raw.githubusercontent.com/sparkreaderapp/sparkreader-library/main/catalog/tags.txt'
         ];
