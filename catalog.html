@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SparkReader Library Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="md-app-bar">
+        <div class="md-container">
+            <h1 class="md-typescale-headline-medium">SparkReader Library</h1>
+            <p class="md-typescale-body-medium">Browse and discover books in the SparkReader collection</p>
+        </div>
+    </div>
+
+    <div class="md-container">
+        <!-- Search Bar -->
+        <div class="md-search-bar">
+            <span class="material-icons">search</span>
+            <input type="text" class="md-search-input" id="searchInput" placeholder="Search books, authors, or topics...">
+            <button class="md-icon-button" id="clearSearch" style="display: none;">
+                <span class="material-icons">clear</span>
+            </button>
+            <button class="md-icon-button" id="toggleFilters">
+                <span class="material-icons" id="filterIcon">expand_more</span>
+            </button>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="md-filter-section" id="filterSection">
+            <div class="md-filter-row" id="temporalFilters">
+                <span class="md-filter-label">Time:</span>
+            </div>
+            <div class="md-filter-row" id="regionalFilters">
+                <span class="md-filter-label">Place:</span>
+            </div>
+            <div class="md-filter-row" id="disciplineFilters">
+                <span class="md-filter-label">Field:</span>
+            </div>
+            <div class="md-filter-row" id="genreFilters">
+                <span class="md-filter-label">Genre:</span>
+            </div>
+        </div>
+
+        <!-- Stats and Clear Filters -->
+        <div class="md-stats">
+            <span id="bookCount" class="md-typescale-body-medium">Loading books...</span>
+            <div>
+                <span id="filterCount" class="md-typescale-label-small"></span>
+                <button class="md-clear-filters" id="clearFilters" style="display: none;">Clear all filters</button>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div class="md-loading" id="loadingState">
+            <span class="md-typescale-body-large">Loading catalog...</span>
+        </div>
+
+        <!-- Error State -->
+        <div class="md-error hidden" id="errorState">
+            <span class="md-typescale-body-medium">Failed to load catalog. Please try again later.</span>
+        </div>
+
+        <!-- Book List -->
+        <div class="md-book-list" id="bookList">
+            <!-- Books will be populated here -->
+        </div>
+    </div>
+
+    <script src="catalog.js"></script>
+</body>
+</html>
