@@ -435,10 +435,6 @@ body {
     align-items: flex-start;
   }
   
-  .md-filter-row {
-    flex-wrap: wrap;
-  }
-  
   .md-stats {
     flex-direction: column;
     align-items: flex-start;
