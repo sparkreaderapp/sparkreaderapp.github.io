@@ -90,16 +90,33 @@
             /* onPrimaryDark */
         }
 
-        .button.library {
-            background-color: #3E4A3D;
-            /* tertiaryContainerDark */
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            background-color: rgba(196, 209, 194, 0.1);
+            /* onTertiaryContainerDark with opacity */
             color: #C4D1C2;
             /* onTertiaryContainerDark */
+            border: 1px solid rgba(196, 209, 194, 0.2);
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
         }
 
-        .button.library:hover {
-            background-color: #2A3529;
-            /* onTertiaryDark */
+        .nav-link:hover {
+            background-color: rgba(196, 209, 194, 0.2);
+            border-color: rgba(196, 209, 194, 0.4);
+            color: #C4D1C2;
+        }
+
+        .nav-link img {
+            height: 20px;
+            width: 20px;
         }
 
         .button img {
@@ -163,6 +180,11 @@ window.onload = setLatestApkUrl;
     <h1>SparkReader</h1>
     <h2 class="subtitle">Offline AI. Limitless Learning. In Your Hand.</h2>
 
+    <a href="library.html" class="nav-link">
+        <img src="images/logo_library_dark.svg" alt="Library Icon">
+        Browse SparkReader Library
+    </a>
+
     <div class="buttons">
         <a id="github-download-link" href="#" class="button github">
             <span class="icon-wrapper">
@@ -172,13 +194,6 @@ window.onload = setLatestApkUrl;
             Download via GitHub
         </a>
 
-        <a href="library.html" class="button library">
-            <span class="icon-wrapper">
-            <img src="images/logo_library_dark.svg"
-                alt="Library Icon">
-            </span>
-            SparkReader Library
-        </a>
 
         <a href="#" class="button google-play">
             <img src="images/playstore.png" alt="Play Store Icon">
