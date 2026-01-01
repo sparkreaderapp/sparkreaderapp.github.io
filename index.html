@@ -129,27 +129,20 @@
     </style>
 
     <script>
-async function getLatestApkUrl() {
+async function setLatestApkUrl() {
   try {
     const response = await fetch("https://api.github.com/repos/sparkreaderapp/sparkreader/releases/latest");
     if (!response.ok) throw new Error("GitHub API error");
     
     const release = await response.json();
-    const apk = release.assets.find(asset => asset.name === "app-release.apk");
-    if (apk) {
-      // Dynamically set a download link or trigger download
-      const downloadLink = document.getElementById("github-download-link");
-      downloadLink.href = apk.browser_download_url;
-      //downloadLink.style.display = "inline";
-    } else {
-      console.error("APK not found in assets.");
-    }
+    const apkUrl = release.assets[0]["browser_download_url"];
+    document.getElementById("github-download-link").href = apkUrl;
   } catch (error) {
     console.error("Failed to fetch release info:", error);
   }
 }
 
-window.onload = getLatestApkUrl;
+window.onload = setLatestApkUrl;
 </script>
 </head>
 
