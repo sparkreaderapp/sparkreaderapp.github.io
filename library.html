@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SparkReader Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Outfit', sans-serif;
+            background-color: #171217;
+            /* backgroundDark */
+            color: #EADFE6;
+            /* onBackgroundDark */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        img.logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0.2em 0;
+            color: #C4D1C2;
+            /* onTertiaryContainerDark */
+        }
+
+        h2.subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: #D0C3CC;
+            /* onSurfaceVariantDark */
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 2rem 0;
+            line-height: 1.6;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            background-color: #3E4A3D;
+            /* tertiaryContainerDark */
+            color: #C4D1C2;
+            /* onTertiaryContainerDark */
+            transition: background-color 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .back-button:hover {
+            background-color: #2A3529;
+            /* onTertiaryDark */
+        }
+
+        a {
+            color: #e3e313;
+            /* sparkStartColor */
+        }
+
+        a:hover {
+            color: #FFDAD5;
+            /* onTertiaryContainerDark */
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2.subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/logo_library_dark.svg" alt="SparkReader Library Logo" class="logo" />
+    <h1>SparkReader Library</h1>
+    <h2 class="subtitle">Your Gateway to Knowledge</h2>
+
+    <div class="content">
+        <p>Welcome to the SparkReader Library - a curated collection of books, documents, and resources optimized for offline AI-powered reading.</p>
+        
+        <p>The library is currently under development. Soon you'll be able to:</p>
+        
+        <ul style="text-align: left; display: inline-block;">
+            <li>Browse thousands of books and documents</li>
+            <li>Download content for offline reading</li>
+            <li>Access AI-enhanced summaries and insights</li>
+            <li>Discover new content based on your interests</li>
+        </ul>
+        
+        <p>Stay tuned for updates!</p>
+    </div>
+
+    <a href="index.html" class="back-button">
+        ← Back to SparkReader
+    </a>
+</body>
+</html>
