@@ -57,31 +57,62 @@ class SparkReaderCatalog {
     }
 
     async loadCatalog() {
-        try {
-            const response = await fetch('https://github.com/sparkreaderapp/sparkreader-library/releases/download/v1.0.0/catalog-v1.0.0.json');
-            if (!response.ok) throw new Error('Failed to fetch catalog');
-            
-            this.books = await response.json();
-            document.getElementById('loadingState').classList.add('hidden');
-        } catch (error) {
-            console.error('Error loading catalog:', error);
-            document.getElementById('loadingState').classList.add('hidden');
-            document.getElementById('errorState').classList.remove('hidden');
+        const urls = [
+            // Try CORS proxy first
+            'https://api.allorigins.win/raw?url=https://github.com/sparkreaderapp/sparkreader-library/releases/download/v1.0.0/catalog-v1.0.0.json',
+            // Fallback to raw GitHub content
+            'https://raw.githubusercontent.com/sparkreaderapp/sparkreader-library/main/catalog/catalog.json'
+        ];
+
+        for (const url of urls) {
+            try {
+                console.log(`Attempting to load catalog from: ${url}`);
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                
+                this.books = await response.json();
+                console.log(`Successfully loaded ${this.books.length} books from catalog`);
+                document.getElementById('loadingState').classList.add('hidden');
+                return;
+            } catch (error) {
+                console.warn(`Failed to load from ${url}:`, error);
+                continue;
+            }
         }
+
+        // If all URLs failed
+        console.error('Failed to load catalog from all sources');
+        document.getElementById('loadingState').classList.add('hidden');
+        document.getElementById('errorState').classList.remove('hidden');
     }
 
     async loadTags() {
-        try {
-            const response = await fetch('https://raw.githubusercontent.com/sparkreaderapp/sparkreader-library/main/catalog/tags.txt');
-            if (!response.ok) throw new Error('Failed to fetch tags');
-            
-            const tagsText = await response.text();
-            this.parseTags(tagsText);
-        } catch (error) {
-            console.error('Error loading tags:', error);
-            // Fallback: extract tags from books
-            this.extractTagsFromBooks();
+        const urls = [
+            // Try CORS proxy first
+            'https://api.allorigins.win/raw?url=https://raw.githubusercontent.com/sparkreaderapp/sparkreader-library/main/catalog/tags.txt',
+            // Direct GitHub raw content (may work in some cases)
+            'https://raw.githubusercontent.com/sparkreaderapp/sparkreader-library/main/catalog/tags.txt'
+        ];
+
+        for (const url of urls) {
+            try {
+                console.log(`Attempting to load tags from: ${url}`);
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                
+                const tagsText = await response.text();
+                this.parseTags(tagsText);
+                console.log('Successfully loaded tags from file');
+                return;
+            } catch (error) {
+                console.warn(`Failed to load tags from ${url}:`, error);
+                continue;
+            }
         }
+
+        // If all URLs failed, fallback to extracting from books
+        console.warn('Failed to load tags from all sources, extracting from books');
+        this.extractTagsFromBooks();
     }
 
     parseTags(tagsText) {
