@@ -418,6 +418,16 @@ body {
   border-color: var(--genre-nonfiction-tag-container);
 }
 
+.md-text-link {
+  color: var(--md-sys-color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.md-text-link:hover {
+  text-decoration: underline;
+}
+
 /* Utility classes */
 .md-loading {
   display: flex;
