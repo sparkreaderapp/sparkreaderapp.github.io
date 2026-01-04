@@ -13,11 +13,14 @@
     <div class="md-app-bar">
         <div class="md-container">
             <div class="md-header-content">
+                <button class="md-icon-button" id="backButton">
+                    <span class="material-icons">arrow_back</span>
+                </button>
                 <img src="images/logo_library_dark.svg" alt="SparkReader Library" class="md-header-icon">
                 <h1 class="md-typescale-headline-medium">SparkReader Library</h1>
-                <button class="md-icon-button" id="infoButton">
-                    <span class="material-icons">info</span>
-                </button>
+                <a href="https://github.com/sparkreaderapp/sparkreader-library" target="_blank" class="md-icon-button">
+                    <span class="material-icons">open_in_new</span>
+                </a>
             </div>
         </div>
     </div>
@@ -76,20 +79,6 @@
         </div>
     </div>
 
-    <!-- Info Modal -->
-    <div class="md-modal-overlay hidden" id="infoModal">
-        <div class="md-modal">
-            <div class="md-modal-header">
-                <h2 class="md-typescale-title-large">About SparkReader Library</h2>
-                <button class="md-icon-button" id="closeModal">
-                    <span class="material-icons">close</span>
-                </button>
-            </div>
-            <div class="md-modal-content">
-                <p>Loading information...</p>
-            </div>
-        </div>
-    </div>
 
     <script src="js/library.js"></script>
 </body>
