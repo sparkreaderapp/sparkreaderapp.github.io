@@ -419,18 +419,18 @@ body {
 }
 
 .md-text-link {
-  color: #FFFFFF !important;
+  color: var(--md-sys-color-primary) !important;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .md-text-link:hover {
-  color: #E3F2FD !important;
+  color: var(--md-sys-color-on-primary-container) !important;
   text-decoration: underline;
 }
 
 .md-text-link:visited {
-  color: #FFFFFF !important;
+  color: var(--md-sys-color-primary) !important;
 }
 
 /* Utility classes */
