@@ -422,19 +422,19 @@ body {
   border-color: var(--genre-nonfiction-tag-container);
 }
 
-.md-text-link {
+a.md-text-link,
+a.md-text-link:link,
+a.md-text-link:visited,
+a.md-text-link:active {
   color: var(--md-sys-color-primary) !important;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.md-text-link:hover {
+a.md-text-link:hover,
+a.md-text-link:focus {
   color: var(--md-sys-color-on-primary-container) !important;
   text-decoration: underline;
-}
-
-.md-text-link:visited {
-  color: var(--md-sys-color-primary) !important;
 }
 
 /* Utility classes */
