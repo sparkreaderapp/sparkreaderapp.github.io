@@ -138,6 +138,10 @@ body {
   gap: 1rem;
 }
 
+.md-header-github {
+  margin-top: 0.5rem;
+}
+
 .md-header-icon {
   width: 32px;
   height: 32px;
