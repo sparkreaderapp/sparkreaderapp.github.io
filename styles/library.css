@@ -495,6 +495,11 @@ a.md-text-link:focus {
     padding: 0.75rem 0;
   }
   
+  .md-header-content h1 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+  
   .md-book-header {
     flex-direction: column;
     align-items: flex-start;
