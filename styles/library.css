@@ -125,7 +125,7 @@ body {
 .md-app-bar {
   background-color: var(--md-sys-color-surface);
   color: var(--md-sys-color-on-surface);
-  padding: 0.75rem 1rem;
+  padding: 0 1rem;
   border-bottom: 1px solid var(--md-sys-color-outline-variant);
   position: sticky;
   top: 0;
@@ -492,7 +492,7 @@ a.md-text-link:focus {
   }
   
   .md-app-bar {
-    padding: 0.75rem 0;
+    padding: 0;
   }
   
   .md-header-content h1 {
