@@ -57,9 +57,9 @@ class SparkReaderCatalog {
 
         // Back button
         const backButton = document.getElementById('backButton');
-        backButton.addEventListener('click', () => {
-            window.history.back();
-        });
+backButton.addEventListener('click', () => {
+  window.location.href = '/';
+});
     }
 
     async loadCatalog() {
